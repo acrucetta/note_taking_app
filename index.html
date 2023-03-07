@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Note Taking App</title>
+    <style>
+      input, textarea {
+        display: block;
+        margin-bottom: 10px;
+      }
+    </style>
+    <script src="elm.js"></script>
+    <script src="decoder.js"></script>
+  </head>
+  <body>
+    <div id="elm"></div>
+    <script>
+      var node = document.getElementById("elm");
+      var app = Elm.Main.init({ node: node });
+    </script>
+    <form onsubmit="app.ports.submitNote.send(); return false;">
+      <label for="title">Title</label>
+      <input type="text" id="title" name="title" required oninput="app.ports.updateNoteTitle.send(this.value);">
+      <label for="body">Body</label>
+      <textarea id="body" name="body" required oninput="app.ports.updateNoteBody.send(this.value);"></textarea>
+      <button type="submit">Add Note</button>
+    </form>
+    <h2>Notes</h2>
+    <ul id="notes">
+      <li>Loading notes...</li>
+    </ul>
+    <script>
+      app.ports.notes.subscribe(function(notes) {
+        var list = document.getElementById("notes");
+        list.innerHTML = "";
+        notes.forEach(function(note) {
+          var item = document.createElement("li");
+          item.textContent = note.title;
+          var body = document.createElement("p");
+          body.textContent = note.body;
+          item.appendChild(body);
+          list.appendChild(item);
+        });
+      });
+    </script>
+  </body>
+</html>
