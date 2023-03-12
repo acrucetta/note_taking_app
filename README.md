@@ -10,6 +10,14 @@ Requirements:
 - I write as much of the stack for the application as possible; the less libraries the better
 - Notes are all parsed and embedded with langchain
 
+Non-goals
+- Syncing
+- Sharing
+- Search algorithm
+- LLM integration
+- Incremental note taking
+- CLI support
+
 v1.0
 - Create note
 - Delete note
