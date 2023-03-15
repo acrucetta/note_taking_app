@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.note {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.note input,
+.note textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    resize: none;
+}
+
+.note input {
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.note textarea {
+    height: 200px;
+}
+
+.note-tag {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+}
+
+/* Buttons */
+button {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 5px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button.delete {
+    background-color: #f44336;
+}
+
+button.delete:hover {
+    background-color: #d32f2f;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #f8f8f8;
+    border-right: 1px solid #ccc;
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.note-list-item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.note-list-item:hover {
+    background-color: #eee;
+}
+
+.note-list-item.active {
+    background-color: #ddd;
+}
+
+.note-list-item h3 {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+.note-list-item p {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Note editor */
+.note-editor {
+    margin-left: 320px;
+    padding: 20px;
+    height: 100%;
+    overflow-y: auto;
+}
